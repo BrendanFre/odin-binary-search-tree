@@ -2,26 +2,14 @@ import Node from "./Node";
 import { buildTree } from "./buildTree";
 import { simplifyArray } from "./simplifyArray";
 
-// export default function (data: Array<any>) {
-//   const build = () => {
-//     buildTree(data);
-//   };
-//   const insert = () => {
-//     insertTree(data);
-//   };
-//   return { build, insert };
-// }
-// function insertTree(data: any[]) {
-//   throw new Error("Function not implemented.");
-// }
-
 export function createTree(data: any) {
   const sortedArray = simplifyArray(data);
   const build = (start: number, end: number) =>
     buildTree(sortedArray, start, end);
   const insert = (number: any, tree: any) => insertTree(number, tree);
+  const find = (number: any, tree: any) => findNode(number, tree);
 
-  return { build, insert };
+  return { build, insert, find };
 }
 
 function insertTree(number: any, tree: any) {
@@ -60,11 +48,6 @@ function insertTree(number: any, tree: any) {
   }
 }
 
-// throw new Error("Function not implemented.");
-
-/*  check value against root node.
-  if node is null, replace with new node.
-  else if node value is greater than value rerun formula on left child
-  else if node value is lower than value rerun formila on right child.
-  else if node is same value exit
-*/
+function findNode(number: any, tree: any) {
+  throw new Error("Function not implemented.");
+}
