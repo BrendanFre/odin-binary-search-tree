@@ -17,7 +17,9 @@ export function deleteNode(number: any, tree: any): any {
       console.log(`Node containing ${number} has been deleteed.`);
       return (tree = null);
     } else if (typeof tree.leftChild == "object") {
+      console.log("left child is an object");
       if (typeof tree.rightChild == null) {
+        console.log("update left");
         tree = tree.leftChild;
       } else if (typeof tree.rightChild == "object") {
         const firstChild = tree.leftChild;
