@@ -4,7 +4,7 @@ export function deleteNode(number: any, tree: any): any {
   if (tree === null || tree === undefined) {
     return null;
   } else if (tree.data == number) {
-    console.log("tree found");
+    console.log("tree found for deletion");
     deletionNode(number, tree);
   } else if (tree != undefined || tree != null) {
     return (
