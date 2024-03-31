@@ -4,9 +4,11 @@ export function deleteNode(number: any, tree: any): any {
   if (tree === null || tree === undefined) {
     return null;
   } else if (tree.leftChild.data == number) {
-    checkBranches(tree.leftChild);
+    tree = checkBranches(tree.leftChild);
     console.log("tree found for deletion");
-  } else if (tree != undefined || tree != null) {
+  } else if (tree.rightChild.data == number) {
+    tree = checkBranches(tree.rightChild);
+  } else {
     return (
       deleteNode(number, tree.leftChild) || deleteNode(number, tree.rightChild)
     );
