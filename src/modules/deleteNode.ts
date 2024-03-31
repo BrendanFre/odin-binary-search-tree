@@ -44,9 +44,11 @@ function moveBranches(tree: any) {
     tree.firstChild = firstChild.firstChild;
     tree.secondChild = firstChild.secondChild;
   } else {
-    tree.data = secondChild.data;
-    tree.firstChild = secondChild.firstChild;
-    tree.secondChild = secondChild.secondChild;
+    const node = tree.secondChild;
+    console.log(node);
+    // tree.data = data;
+    tree.firstChild = firstChild;
+    tree.secondChild = secondChild;
   }
   tree = null;
   insertTree(firstChild, tree) || insertTree(secondChild, tree);
