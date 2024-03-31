@@ -16,7 +16,7 @@ export function deleteNode(number: any, tree: any): any {
     if (tree.leftChild == null && tree.rightChild == null) {
       console.log(`Node containing ${number} has been deleteed.`);
       return (tree = null);
-    } else if (typeof tree.leftChild == "object") {
+    } else if (tree.leftChild != null) {
       console.log("left child is an object");
       if (typeof tree.rightChild == null) {
         console.log("update left");
@@ -31,7 +31,7 @@ export function deleteNode(number: any, tree: any): any {
       }
     } else {
       console.log("delete right");
-      tree = tree.rightChild;
+      tree.data = tree.rightChild;
     }
   }
 }
