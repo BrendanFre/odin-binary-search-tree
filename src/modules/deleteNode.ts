@@ -45,6 +45,7 @@ function moveBranches(tree: any) {
     tree.secondChild = firstChild.secondChild;
   } else {
     const node = tree.secondChild;
+    tree.firstChild = null;
     console.log(node);
     // tree.data = node.data;
     tree.firstChild = firstChild;
