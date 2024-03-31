@@ -1,5 +1,5 @@
 import { buildTree } from "./buildTree";
-import { deleteNode } from "./deleteNode";
+import { deleteNode } from "./deleteNode.1";
 import { findNode } from "./findNode";
 import { insertTree } from "./insertTree";
 import { simplifyArray } from "./simplifyArray";
