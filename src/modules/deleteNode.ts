@@ -22,12 +22,9 @@ export function deleteNode(number: any, tree: any): any {
         console.log("update left");
         tree = tree.leftChild;
       } else if (typeof tree.rightChild == "object") {
-        const firstChild = tree.leftChild;
-        const secondChild = tree.rightChild;
-        tree = undefined;
-        insertTree(firstChild, tree);
-        insertTree(secondChild, tree);
-        return (tree = null);
+        let __return;
+        ({ __return, tree } = moveBranches(tree));
+        return __return;
       }
     } else {
       console.log("delete right");
@@ -36,4 +33,12 @@ export function deleteNode(number: any, tree: any): any {
       tree.rightChild = tree.rightChild.leftChild;
     }
   }
+}
+function moveBranches(tree: any) {
+  console.log(`Two branches`);
+  const firstChild = tree.leftChild;
+  const secondChild = tree.rightChild;
+  tree = undefined;
+  insertTree(firstChild, tree) || insertTree(secondChild, tree);
+  return { __return: (tree = null), tree };
 }
