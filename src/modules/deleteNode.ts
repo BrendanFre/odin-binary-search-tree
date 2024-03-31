@@ -19,13 +19,16 @@ export function deleteNode(number: any, tree: any): any {
     } else if (typeof tree.leftChild == "object") {
       if (typeof tree.leftChild == null) {
         tree = tree.leftChild;
-      } else {
+      } else if (typeof tree.rightChild == "object") {
         const firstChild = tree.leftChild;
         const secondChild = tree.rightChild;
         tree = undefined;
         insertTree(firstChild, tree);
         insertTree(secondChild, tree);
         return (tree = null);
+      } else {
+        console.log("delete right");
+        tree = tree.rightChild;
       }
     }
   }
