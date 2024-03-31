@@ -48,13 +48,13 @@ function insertTree(number: any, tree: any) {
   }
 }
 
-function findNode(number: any, tree: any) {
+function findNode(number: number, tree: any) {
   console.log(`Tree is ${JSON.stringify(tree)}`);
   if (tree === null) {
     console.log(`${number} is not in ${tree}`);
     return null;
   }
-  if (tree.data == number) {
+  if (tree["data"] == number) {
     return "found";
   } else if (tree != undefined || tree != null) {
     findNode(number, tree.leftChild);
