@@ -14,4 +14,4 @@ theTree.insert(24, finalTree);
 
 prettyPrint(finalTree);
 
-console.log(typeof finalTree);
+theTree.find(2, finalTree);

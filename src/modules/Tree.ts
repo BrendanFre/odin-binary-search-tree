@@ -49,5 +49,15 @@ function insertTree(number: any, tree: any) {
 }
 
 function findNode(number: any, tree: any) {
+  if (tree == null) {
+    return null;
+  }
+  if (tree.data == number) {
+    return tree;
+  } else if (tree != undefined || tree != null) {
+    findNode(number, tree.leftChild);
+    findNode(number, tree.rightChild);
+  }
+  console.log(tree);
   throw new Error("Function not implemented.");
 }
