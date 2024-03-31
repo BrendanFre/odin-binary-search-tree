@@ -58,9 +58,9 @@ function findNode(number: number, tree: any) {
     console.log(`${number} is not in ${tree}`);
     return null;
   } else if (tree.data === number) {
-    return "found";
+    return tree;
   } else if (tree != undefined || tree != null) {
-    findNode(number, tree.leftChild);
-    findNode(number, tree.rightChild);
+    const leftChild = findNode(number, tree.leftChild);
+    const rightChild = findNode(number, tree.rightChild);
   }
 }
