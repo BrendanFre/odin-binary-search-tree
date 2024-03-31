@@ -31,7 +31,9 @@ export function deleteNode(number: any, tree: any): any {
       }
     } else {
       console.log("delete right");
-      tree.data = tree.rightChild;
+      tree.data = tree.rightChild.data;
+      tree.leftChild = tree.rightChild.leftChild;
+      tree.rightChild = tree.rightChild.leftChild;
     }
   }
 }
