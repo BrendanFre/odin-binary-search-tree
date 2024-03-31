@@ -19,3 +19,9 @@ console.log(`The tree is located in ${theTree.find(2, finalTree)}`);
 theTree.deletion(2, finalTree);
 
 prettyPrint(finalTree);
+
+console.log(`Delete object with two branches`);
+
+theTree.deletion(40, finalTree);
+
+prettyPrint(finalTree);
