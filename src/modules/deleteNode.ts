@@ -46,7 +46,7 @@ function moveBranches(tree: any) {
   } else {
     const node = tree.secondChild;
     console.log(node);
-    // tree.data = data;
+    // tree.data = node.data;
     tree.firstChild = firstChild;
     tree.secondChild = secondChild;
   }
