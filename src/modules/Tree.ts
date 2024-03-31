@@ -49,12 +49,11 @@ function insertTree(number: any, tree: any) {
 }
 
 function findNode(number: number, tree: any) {
-  console.log(`Tree is ${JSON.stringify(tree)}`);
+  console.log(`Tree data is ${tree.data} and is of type ${typeof tree.data}`);
   if (tree === null) {
     console.log(`${number} is not in ${tree}`);
     return null;
-  }
-  if (tree["data"] == number) {
+  } else if (tree["data"] == number) {
     return "found";
   } else if (tree != undefined || tree != null) {
     findNode(number, tree.leftChild);
