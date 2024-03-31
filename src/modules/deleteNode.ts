@@ -28,10 +28,10 @@ export function deleteNode(number: any, tree: any): any {
         insertTree(firstChild, tree);
         insertTree(secondChild, tree);
         return (tree = null);
-      } else {
-        console.log("delete right");
-        tree = tree.rightChild;
       }
+    } else {
+      console.log("delete right");
+      tree = tree.rightChild;
     }
   }
 }
