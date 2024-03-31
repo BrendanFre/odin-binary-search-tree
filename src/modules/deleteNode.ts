@@ -38,7 +38,7 @@ function moveBranches(tree: any) {
   console.log(`Two branches`);
   const firstChild = tree.leftChild;
   const secondChild = tree.rightChild;
-  tree = undefined;
+  tree = null;
   insertTree(firstChild, tree) || insertTree(secondChild, tree);
   return { __return: (tree = null), tree };
 }
