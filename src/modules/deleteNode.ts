@@ -1,3 +1,5 @@
+import { insertTree } from "./insertTree";
+
 export function deleteNode(number: any, tree: any): any {
   if (tree === null || tree === undefined) {
     return null;
@@ -21,8 +23,8 @@ export function deleteNode(number: any, tree: any): any {
         const firstChild = tree.leftChild;
         const secondChild = tree.rightChild;
         tree = undefined;
-        tree.insert(firstChild, tree);
-        tree.insert(secondChild, tree);
+        insertTree(firstChild, tree);
+        insertTree(secondChild, tree);
         return (tree = null);
       }
     }
