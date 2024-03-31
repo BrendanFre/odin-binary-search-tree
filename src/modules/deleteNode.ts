@@ -49,6 +49,9 @@ export function deleteNode(number: any, tree: any): any {
           // Right child is empty
           return node.leftChild;
         }
+      } else {
+        // Left child is empty
+        return node.rightChild;
       }
     }
   }
