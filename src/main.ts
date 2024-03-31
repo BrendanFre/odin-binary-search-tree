@@ -15,3 +15,7 @@ theTree.insert(24, finalTree);
 prettyPrint(finalTree);
 
 console.log(`The tree is located in ${theTree.find(2, finalTree)}`);
+
+theTree.deletion(2, finalTree);
+
+prettyPrint(finalTree);
