@@ -5,14 +5,14 @@ export function deleteNode(number: any, tree: any): any {
     return null;
   } else if (tree.data == number) {
     console.log("tree found");
-    deletion(number, tree);
+    deletionNode(number, tree);
   } else if (tree != undefined || tree != null) {
     return (
       deleteNode(number, tree.leftChild) || deleteNode(number, tree.rightChild)
     );
   }
 
-  function deletion(number: any, tree: any) {
+  function deletionNode(number: any, tree: any) {
     if (tree.leftChild == null && tree.rightChild == null) {
       console.log(`Node containing ${number} has been deleteed.`);
       return (tree = null);
