@@ -1,5 +1,5 @@
-import Node from "./Node";
 import { buildTree } from "./buildTree";
+import { insertTree } from "./insertTree";
 import { simplifyArray } from "./simplifyArray";
 
 export function createTree(data: any) {
@@ -10,42 +10,6 @@ export function createTree(data: any) {
   const find = (number: any, tree: any) => findNode(number, tree);
 
   return { build, insert, find };
-}
-
-function insertTree(number: any, tree: any) {
-  console.log(number);
-  console.log(`${typeof tree}`);
-  if (tree == undefined || tree == null) {
-    console.log(`data is not defined`);
-    return Node(number);
-  } else if (tree.hasOwnProperty("data")) {
-    const existingValue = tree.data;
-    console.log(`existing value = ${existingValue}`);
-    if (number < existingValue) {
-      console.log(`number is smaller`);
-      leftChild();
-    } else {
-      rightChild();
-    }
-  }
-
-  function rightChild() {
-    if (tree.rightChild == null) {
-      const n = Node(number);
-      tree.rightChild = n;
-    } else {
-      insertTree(number, tree.rightChild);
-    }
-  }
-
-  function leftChild() {
-    if (tree.leftChild == null) {
-      const n = Node(number);
-      tree.leftChild = n;
-    } else {
-      insertTree(number, tree.leftChild);
-    }
-  }
 }
 
 function findNode(number: number, tree: any) {
