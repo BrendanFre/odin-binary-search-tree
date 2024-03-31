@@ -62,5 +62,6 @@ function findNode(number: number, tree: any) {
   } else if (tree != undefined || tree != null) {
     const leftChild = findNode(number, tree.leftChild);
     const rightChild = findNode(number, tree.rightChild);
+    return tree;
   }
 }
