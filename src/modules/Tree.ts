@@ -13,19 +13,13 @@ export function createTree(data: any) {
 }
 
 function findNode(number: number, tree: any) {
-  // console.log(
-  //   `Tree data is ${tree.data} and is of type ${typeof tree.data} it is ${
-  //     tree.data == number
-  //   }`
-  // );
-  if (tree === null) {
-    console.log(`${number} is not in ${tree}`);
+  if (tree === null || tree === undefined) {
     return null;
   } else if (tree.data == number) {
-    return tree;
+    return JSON.stringify(tree);
   } else if (tree != undefined || tree != null) {
-    const leftChild = findNode(number, tree.leftChild);
-    const rightChild = findNode(number, tree.rightChild);
-    return null;
+    return (
+      findNode(number, tree.leftChild) || findNode(number, tree.rightChild)
+    );
   }
 }
