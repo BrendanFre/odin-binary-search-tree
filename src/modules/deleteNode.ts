@@ -38,6 +38,16 @@ function moveBranches(tree: any) {
   console.log(`Two branches`);
   const firstChild = tree.leftChild;
   const secondChild = tree.rightChild;
+  tree.data = null;
+  if (firstChild.data > secondChild.data) {
+    tree.data = firstChild.data;
+    tree.firstChild = firstChild.firstChild;
+    tree.secondChild = firstChild.secondChild;
+  } else {
+    tree.data = secondChild.data;
+    tree.firstChild = secondChild.firstChild;
+    tree.secondChild = secondChild.secondChild;
+  }
   tree = null;
   insertTree(firstChild, tree) || insertTree(secondChild, tree);
   return { __return: (tree = null), tree };
