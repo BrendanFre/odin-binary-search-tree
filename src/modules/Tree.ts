@@ -49,8 +49,9 @@ function insertTree(number: any, tree: any) {
 }
 
 function findNode(number: any, tree: any) {
-  if (tree == null) {
-    console.log("not found");
+  console.log(`Tree is ${JSON.stringify(tree)}`);
+  if (tree === null) {
+    console.log(`${number} is not in ${tree}`);
     return null;
   }
   if (tree.data == number) {
