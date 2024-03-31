@@ -57,11 +57,11 @@ function findNode(number: number, tree: any) {
   if (tree === null) {
     console.log(`${number} is not in ${tree}`);
     return null;
-  } else if (tree.data === number) {
-    return tree;
+  } else if (tree.data == number) {
+    return console.log("found");
   } else if (tree != undefined || tree != null) {
     const leftChild = findNode(number, tree.leftChild);
     const rightChild = findNode(number, tree.rightChild);
-    return tree;
+    return null;
   }
 }
